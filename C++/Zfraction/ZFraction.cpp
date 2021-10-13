@@ -37,7 +37,7 @@ int ZFraction::getDiviseur() const// pas utile ici. Pour access attribut
 
 void ZFraction::addition(ZFraction copieB)
 {
-    int tmp{0};
+    int tmp(0);
     if (m_diviseur == copieB.m_diviseur)
     {
         m_nb += copieB.m_nb;
@@ -51,7 +51,7 @@ void ZFraction::addition(ZFraction copieB)
         copieB.m_diviseur *= tmp;// on multiplit A par diviseur B puis B par diviseur A
         m_nb += copieB.m_nb;// quand ils ont le meme diviseur, reste plus qu'à ajouter le haut.
     }
-    int m_pgcd{0};//fn plus grand denominateur commun pour reduire les fractions
+    int m_pgcd(0);//fn plus grand denominateur commun pour reduire les fractions
     m_pgcd = pgcd(m_nb, m_diviseur);
     if (m_pgcd > 0)
     {
@@ -72,7 +72,7 @@ void ZFraction::multi(ZFraction const &b)
 {
     m_nb *= b.m_nb;
     m_diviseur *= b.m_diviseur;
-    int m_pgcd{0};//fn plus grand denominateur commun pour reduire les fractions
+    int m_pgcd(0);//fn plus grand denominateur commun pour reduire les fractions
     m_pgcd = pgcd(m_nb, m_diviseur);
     if (m_pgcd > 0)
     {
